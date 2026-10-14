@@ -333,13 +333,8 @@
   <aside class="sidebar">
     <div class="wordmark-row">
       <img src="/solana/svg/wordmark.svg" alt="Project Solana" class="wordmark" />
-      <button
-        class="secret-toggle-btn"
-        onclick={toggleSolanaMode}
-        title="Return to OpenRAC Launcher"
-        aria-label="Return to OpenRAC Launcher"
-      >
-        <span class="sun-icon"><Icon name="sun" size={18} /></span>
+      <button class="secret-toggle-btn" onclick={toggleSolanaMode} title="Toggle theme" aria-label="Toggle theme">
+        <span class="theme-icon"><Icon name="moon" size={17} /></span>
       </button>
     </div>
 

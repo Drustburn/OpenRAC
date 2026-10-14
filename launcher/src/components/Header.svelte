@@ -57,13 +57,8 @@
     {#if !inTauri}<span class="preview">Browser preview</span>{/if}
     <button class="site" onclick={() => void api.openUrl(SITE_URL)}>openrac.dev</button>
     <button class="discord" onclick={() => void api.openUrl(DISCORD_URL)}>Discord</button>
-    <button
-      class="solana-secret"
-      onclick={toggleSolanaMode}
-      title="Project Solana"
-      aria-label="Transform into Project Solana"
-    >
-      <Icon name="sun" size={20} />
+    <button class="theme-toggle" onclick={toggleSolanaMode} title="Toggle theme" aria-label="Toggle theme">
+      <Icon name="sun" size={19} />
     </button>
   </div>
 </header>
@@ -234,7 +229,7 @@
     color: #fff;
   }
 
-  .solana-secret {
+  .theme-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -243,16 +238,15 @@
     border-radius: 999px;
     color: var(--bar-ink);
     cursor: pointer;
-    opacity: 0.78;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.82;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .solana-secret:hover {
+  .theme-toggle:hover {
     opacity: 1;
     background: rgb(0 0 0 / 0.12);
     color: #000;
-    transform: rotate(25deg) scale(1.12);
-    box-shadow: 0 0 12px rgb(255 122 61 / 0.6);
+    transform: rotate(18deg) scale(1.08);
   }
 
   /* A narrow window keeps the tabs: the site link and the tag give way first. */
