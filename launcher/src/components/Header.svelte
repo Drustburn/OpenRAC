@@ -62,7 +62,7 @@
       title="Project Solana"
       aria-label="Switch to Project Solana"
     >
-      <img src="/solana/svg/app_icon_small_16-32.svg" alt="Project Solana" width="22" height="22" class="solana-icon" />
+      <img src="/solana/svg/wordmark.svg" alt="Project Solana" class="solana-wordmark-img" />
     </button>
   </div>
 </header>
@@ -237,28 +237,28 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    border-radius: 8px;
-    border: 1px solid rgb(0 0 0 / 0.2);
-    background: rgb(10 14 26 / 0.15);
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid rgb(0 0 0 / 0.25);
+    background: #0a0e1a;
     cursor: pointer;
-    overflow: hidden;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.25);
   }
 
   .solana-switch:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 12px rgb(255 122 61 / 0.6);
-    border-color: rgb(255 122 61 / 0.8);
+    background: #151c30;
+    border-color: #ff7a3d;
+    transform: scale(1.04);
+    box-shadow: 0 0 14px rgb(255 122 61 / 0.5);
   }
 
-  .solana-icon {
-    width: 22px;
-    height: 22px;
-    border-radius: 5px;
+  .solana-wordmark-img {
+    height: 20px;
+    width: auto;
     display: block;
+    object-fit: contain;
   }
 
   /* A narrow window keeps the tabs: the site link and the tag give way first. */
