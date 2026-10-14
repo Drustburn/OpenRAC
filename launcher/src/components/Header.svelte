@@ -1,7 +1,6 @@
 <script lang="ts">
   // The website's sticky orange bar (openrac-site src/components/Header.tsx):
   // the wrench, "OpenRAC" in Audiowide, round tabs, a white Discord button.
-  import Icon from "$components/Icon.svelte";
   import { api, inTauri } from "$lib/api";
   import { app, jobs, pendingJobs, runningJob, toggleSolanaMode, type Page } from "$lib/app.svelte";
   import { DISCORD_URL, SITE_URL } from "$lib/links";
@@ -57,8 +56,13 @@
     {#if !inTauri}<span class="preview">Browser preview</span>{/if}
     <button class="site" onclick={() => void api.openUrl(SITE_URL)}>openrac.dev</button>
     <button class="discord" onclick={() => void api.openUrl(DISCORD_URL)}>Discord</button>
-    <button class="theme-toggle" onclick={toggleSolanaMode} title="Toggle theme" aria-label="Toggle theme">
-      <Icon name="sun" size={19} />
+    <button
+      class="solana-switch"
+      onclick={toggleSolanaMode}
+      title="Project Solana"
+      aria-label="Switch to Project Solana"
+    >
+      <img src="/solana/svg/app_icon_small_16-32.svg" alt="Project Solana" width="22" height="22" class="solana-icon" />
     </button>
   </div>
 </header>
@@ -229,24 +233,32 @@
     color: #fff;
   }
 
-  .theme-toggle {
+  .solana-switch {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 32px;
     height: 32px;
-    border-radius: 999px;
-    color: var(--bar-ink);
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid rgb(0 0 0 / 0.2);
+    background: rgb(10 14 26 / 0.15);
     cursor: pointer;
-    opacity: 0.82;
+    overflow: hidden;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .theme-toggle:hover {
-    opacity: 1;
-    background: rgb(0 0 0 / 0.12);
-    color: #000;
-    transform: rotate(18deg) scale(1.08);
+  .solana-switch:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgb(255 122 61 / 0.6);
+    border-color: rgb(255 122 61 / 0.8);
+  }
+
+  .solana-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    display: block;
   }
 
   /* A narrow window keeps the tabs: the site link and the tag give way first. */

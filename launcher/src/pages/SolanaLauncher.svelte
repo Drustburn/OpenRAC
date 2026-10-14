@@ -1,7 +1,6 @@
 <script lang="ts">
   // Project Solana Launcher view: an authentic recreation of Project Solana's
   // "Horizon" launcher (Direction D), integrated seamlessly into OpenRAC.
-  import Icon from "$components/Icon.svelte";
   import { api, pickFolder, pickIso } from "$lib/api";
   import {
     app,
@@ -333,8 +332,8 @@
   <aside class="sidebar">
     <div class="wordmark-row">
       <img src="/solana/svg/wordmark.svg" alt="Project Solana" class="wordmark" />
-      <button class="secret-toggle-btn" onclick={toggleSolanaMode} title="Toggle theme" aria-label="Toggle theme">
-        <span class="theme-icon"><Icon name="moon" size={17} /></span>
+      <button class="secret-toggle-btn" onclick={toggleSolanaMode} title="Back to OpenRAC" aria-label="Back to OpenRAC">
+        <img src="/wrench.webp" alt="OpenRAC" width="18" height="18" />
       </button>
     </div>
 
@@ -809,10 +808,9 @@
   .secret-toggle-btn {
     width: 32px;
     height: 32px;
-    border-radius: 999px;
+    border-radius: 8px;
     border: 1px solid var(--solana-border);
     background: var(--solana-card);
-    color: var(--solana-accent);
     display: grid;
     place-items: center;
     cursor: pointer;
@@ -821,9 +819,9 @@
 
   .secret-toggle-btn:hover {
     background: var(--solana-card-hover);
-    color: var(--solana-accent-hover);
-    transform: rotate(30deg) scale(1.1);
-    box-shadow: 0 0 10px rgb(255 122 61 / 0.4);
+    border-color: #ffb443;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgb(255 180 67 / 0.5);
   }
 
   .library-header {
