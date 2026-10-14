@@ -779,8 +779,8 @@
 
   /* ---- Sidebar ------------------------------------------------ */
   .sidebar {
-    width: 300px;
-    min-width: 300px;
+    width: 320px;
+    min-width: 320px;
     background: var(--solana-side);
     border-right: 1px solid var(--solana-border);
     display: flex;
@@ -856,13 +856,21 @@
 
   .disc-item {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    min-height: 64px;
     border: 1px solid transparent;
     background: var(--solana-side);
     border-radius: 10px;
-    padding: 10px 14px;
+    padding: 10px 14px 10px 18px;
     text-align: left;
     color: inherit;
     cursor: pointer;
+    gap: 4px;
+    box-sizing: border-box;
     transition: all 0.15s ease;
   }
 
@@ -892,18 +900,25 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.3;
+    width: 100%;
   }
 
   .item-meta {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 4px;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--solana-muted);
+    line-height: 1.2;
+    width: 100%;
   }
 
   .region-badge {
     font-size: 11px;
     color: var(--solana-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .status-dot {
@@ -919,6 +934,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
   }
 
   .sidebar-bottom {
