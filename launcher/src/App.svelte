@@ -6,6 +6,7 @@
   import Library from "./pages/Library.svelte";
   import Mods from "./pages/Mods.svelte";
   import Settings from "./pages/Settings.svelte";
+  import SolanaLauncher from "./pages/SolanaLauncher.svelte";
   import Tasks from "./pages/Tasks.svelte";
 
   $effect(() => {
@@ -41,6 +42,8 @@
 
 {#if !app.config}
   <div class="loading"><span class="spinner"></span></div>
+{:else if app.solanaMode}
+  <SolanaLauncher />
 {:else}
   <div class="shell">
     {#if app.config.setupComplete}<Header />{/if}

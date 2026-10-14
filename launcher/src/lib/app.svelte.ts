@@ -31,6 +31,8 @@ interface AppState {
   /** The version the game page shows (`rac1/pal`). */
   version: string | null;
   toasts: { id: number; text: string; kind: "info" | "error" }[];
+  /** Whether the Project Solana launcher view is active. */
+  solanaMode: boolean;
 }
 
 export const app = $state<AppState>({
@@ -42,7 +44,12 @@ export const app = $state<AppState>({
   page: "library",
   version: null,
   toasts: [],
+  solanaMode: false,
 });
+
+export function toggleSolanaMode() {
+  app.solanaMode = !app.solanaMode;
+}
 
 /** The time, once a second: what a running job's elapsed time is counted against. One timer for
  *  the whole app (started in `start`), so a page shows it moving however it was reached. */
