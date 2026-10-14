@@ -808,13 +808,25 @@
   .secret-toggle-btn {
     width: 32px;
     height: 32px;
+    padding: 0;
+    margin: 0;
     border-radius: 8px;
     border: 1px solid var(--solana-border);
     background: var(--solana-card);
-    display: grid;
-    place-items: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .secret-toggle-btn img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    object-fit: contain;
+    pointer-events: none;
   }
 
   .secret-toggle-btn:hover {
